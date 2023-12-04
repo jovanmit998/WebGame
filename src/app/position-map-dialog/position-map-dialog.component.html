@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Where am I</h1>
+<div mat-dialog-content>
+  <mat-card *ngFor="let unlockedFlag of state.unlockedRoutes"
+  [ngClass]="isFlagHightLighted(unlockedFlag) ? 'highlightedCard': null">
+    <mat-card-content>
+      <img [src]="'assets/' + unlockedFlag + '.png'" alt="Flag">
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [disabled]="isFlagHightLighted(unlockedFlag)"
+      (click)="state.openRouteForFlag(unlockedFlag)">{{isFlagHightLighted(unlockedFlag) ? 'IM HERE': 'VISIT'}}</button>
+      <mat-icon color="accent">lock_open</mat-icon>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

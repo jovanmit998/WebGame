@@ -1,0 +1,57 @@
+<form [formGroup]="secondRegistrationForm" (ngSubmit)="getUniqueID()" autocomplete="off">
+
+  <mat-form-field>
+    <mat-label>Full Name</mat-label>
+    <input matInput formControlName="fullName">
+  </mat-form-field>
+
+  <mat-form-field>
+
+    <mat-label>Birth date</mat-label>
+    <input matInput [matDatepicker]="picker" readonly="true" formControlName="birthDate">
+    <mat-hint *ngIf="secondRegistrationForm.get('birthDate').errors?.['invalidYear']">Yea sure...</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+    <mat-datepicker #picker></mat-datepicker>
+
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>What country do you live in?</mat-label>
+    <mat-select formControlName="country">
+      <mat-option *ngFor="let country of (appState.getAllCountries$ | async)" [value]="country">
+        {{country}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-label>Select your gender</mat-label>
+  <mat-radio-group color="primary" required="true" formControlName="gender">
+    <mat-radio-button value="Male">Male</mat-radio-button>
+    <mat-radio-button value="Female">Female</mat-radio-button>
+    <mat-radio-button value="Other">Other</mat-radio-button>
+  </mat-radio-group>
+
+
+  <div>
+    <mat-form-field class="uniqueid">
+      <mat-label>Unique ID</mat-label>
+      <input matInput formControlName="uniqueID" readonly="true">
+    </mat-form-field>
+  </div>
+
+  <div class="regButtons">
+    <button mat-raised-button type="submit"
+    color="primary" [disabled]="isRegistrateButtonDisabled"
+    [routerLink]="'/UniqueID'">Register</button>
+
+    <button mat-raised-button type="button" color="warn"
+     [disabled]="(!secondRegistrationForm.valid && isRegistrateButtonDisabled) || !isRegistrateButtonDisabled"
+     (click)="getUniqueID()">Get Unique ID</button>
+  </div>
+
+</form>
+
+<app-helper></app-helper>
+
+

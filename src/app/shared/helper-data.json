@@ -1,0 +1,23 @@
+{
+      "registration": [
+        "Hello I will help you in form filling",
+        "My name is Viktor, not like I care",
+        "I like long beaches at the walk",
+        "Come on fill this form so I can do literally anything else"
+      ],
+      "registationID": [
+        "In order to get unique user ID we would like to ask you some questions",
+        "These questions are important, so please try to answer them honestly",
+        "We are doing this because we had security issues",
+        "We also want to know more about you",
+        "Don't worry your data will be safe with me, and 100 more analysts looking at this"
+      ],
+      "UniqueID": [
+        "Hello again...",
+        "I know what you think, 'ugh more questions from these idiots'",
+        "I promise this is the last time, we need to make sure",
+        "The more information about you we have the more we can secure our app",
+        "On the other hand, its not like you have a choice..."
+      ]
+
+}

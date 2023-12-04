@@ -1,0 +1,60 @@
+<form [formGroup]="thirdRegistrationForm" (ngSubmit)="submitFun()" autocomplete="off">
+
+  <mat-form-field appearance="fill">
+    <mat-label>What's your pets name?</mat-label>
+    <input matInput formControlName="petsName">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Your favorite sport?</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           formControlName="favoriteSport"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let sport of filteredSports | async" [value]="sport">
+        {{sport}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Your grandmas birthday</mat-label>
+    <input matInput [matDatepicker]="grandma" formControlName="grandmasBirthDay">
+    <mat-hint *ngIf="thirdRegistrationForm.controls['grandmasBirthDay'].errors?.['invalidYear']">There is no way your grandma is that young...</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="grandma"></mat-datepicker-toggle>
+    <mat-datepicker #grandma></mat-datepicker>
+  </mat-form-field>
+
+
+  <div class="virginity-elements">
+    <mat-form-field appearance="fill" class="virginity">
+      <mat-label>Where did you lose your virginity?</mat-label>
+      <mat-select (selectionChange)="selectedSexPlace($event)"
+      formControlName="virginity">
+        <mat-option *ngFor="let place of appState.sexPlaces" [value]="place">
+          {{place}}
+        </mat-option>
+      </mat-select>
+      <mat-hint *ngIf="isSexPlaceWild">Damn, you wild!</mat-hint>
+    </mat-form-field>
+    <mat-checkbox color="warn" (change)="isVirginChecked($event)">I'm a virgin :(</mat-checkbox>
+  </div>
+
+
+  <button mat-raised-button
+  type="submit"
+  color="warn"
+  [disabled]="!thirdRegistrationForm.valid"
+  id="submit"
+  #submitBtn>
+    {{thirdRegistrationForm.disabled ? 'UserID has been hashed': 'Hash my ID'}}
+  </button>
+
+</form>
+
+<app-helper></app-helper>
+
+

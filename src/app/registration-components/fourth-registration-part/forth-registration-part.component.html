@@ -1,0 +1,50 @@
+<div class="container">
+    <mat-accordion>
+    <mat-expansion-panel #exp1 (opened)="showButton(exp1, exp2, exp3)" (closed)="showButton(exp1, exp2, exp3)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Education
+      </mat-panel-title>
+      <mat-panel-description>
+        Education questionnaire
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+      <app-education #education></app-education>
+
+    </mat-expansion-panel>
+  <mat-expansion-panel #exp2 (opened)="showButton(exp1, exp2, exp3)" (closed)="showButton(exp1, exp2, exp3)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       Hobbies
+      </mat-panel-title>
+      <mat-panel-description>
+        Hobbies questionnaire
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-hobbies #hobbies></app-hobbies>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel #exp3 (opened)="showButton(exp1, exp2, exp3)" (closed)="showButton(exp1, exp2, exp3)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+       Work
+      </mat-panel-title>
+      <mat-panel-description>
+        Work questionnaire
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <app-work #work></app-work>
+
+  </mat-expansion-panel>
+  </mat-accordion>
+  <button mat-raised-button type="button"
+  color="primary"
+   (click)="redirectToNextPage(education, hobbies, work)"
+   [disabled]="education.educationForm.invalid || hobbies.hobbiesForm.invalid || work.workForm.invalid"
+   *ngIf="!isSubmitButtonVisible"
+   class="submit-btn">Submit Questionnaire </button>
+</div>

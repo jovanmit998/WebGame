@@ -1,0 +1,11 @@
+
+<p>This website uses cookies in order to offer you the most relevant information. Please accept cookies
+  for optimal performance.
+</p>
+
+<div class="flex-container">
+  <button mat-raised-button (click)="bottomSheet.dismiss()" color="primary">Accept Cookies</button>
+  <button mat-raised-button (click)="bottomSheet.dismiss()" color="warn" (mouseenter)="moveButton()" #movingElement>
+    Decline cookies
+  </button>
+</div>

@@ -1,0 +1,19 @@
+mat-label {
+  font-size: 12px;
+}
+
+mat-grid-tile:nth-child(1) {
+  background-color: rgba(255, 235, 214, 0.2);
+  color: rgb(48, 47, 47);
+}
+
+mat-grid-tile:not(:first-child):hover {
+  background-color: rgb(78, 76, 76) !important;
+  cursor: pointer;
+}
+
+.grid {
+  background-color: rgb(99, 96, 96);
+  width: 80%;
+  margin: auto;
+}

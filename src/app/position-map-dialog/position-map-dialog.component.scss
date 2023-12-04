@@ -1,0 +1,25 @@
+[mat-dialog-content] {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+h1 {
+  text-align: center;
+}
+
+mat-card-actions {
+  display: flex;
+  align-items: center;
+}
+
+.highlightedCard {
+  background-color: rgb(134, 138, 141);
+  button {
+    color: rgb(219, 40, 40);
+    background-color: rgb(173, 173, 126);
+    font-weight: bold;
+  }
+}

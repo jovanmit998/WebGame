@@ -1,0 +1,23 @@
+img {
+  width: 50%;
+}
+
+h1 {
+  text-align: center;
+}
+
+[mat-dialog-content] {
+  display: flex;
+  justify-content: center;
+}
+
+.text-container {
+  display: flex;
+  gap: 40px;
+}
+
+.text-container p {
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

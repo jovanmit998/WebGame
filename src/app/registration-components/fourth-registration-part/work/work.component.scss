@@ -1,0 +1,28 @@
+table {
+  width: 100%;
+}
+
+[mat-mini-fab] {
+  margin-right: 15px;
+  &:hover {
+    background-color: rgb(216, 204, 204);
+  }
+}
+
+[mat-cell]:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+.selectedButton {
+  height: 45px;
+  width: 45px;
+  background-color: #02fc02;
+}
+
+.desc {
+  padding-left: 10px;
+}
+
+mat-label {
+  font-size: 12px;
+}

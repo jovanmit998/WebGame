@@ -1,0 +1,35 @@
+<form [formGroup]="educationForm">
+<div class="contents-container">
+  <div> <!--Encapsulating two elements into one, so they appear next to each other-->
+    <mat-form-field appearance="fill" matTooltip="What is your level of education?" matTooltipPosition="above">
+      <mat-label>What is your level of education?</mat-label>
+      <mat-select (selectionChange)="itemSelected($event)" formControlName="levelOfEducation">
+        <mat-option *ngFor="let level of educationLevels" [value]="level">
+          {{level}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    &nbsp;
+    <span *ngIf="isMastersOrHigher | async">
+      <mat-label>Prove it, upload the diploma &nbsp;</mat-label>
+      <input type="file">
+    </span>
+  </div>
+    <mat-form-field appearance="fill" matTooltip="What was your favorite subject in school?" matTooltipPosition="right">
+      <mat-label>What was your favorite subject in school?</mat-label>
+      <input matInput formControlName="favoriteSubject">
+    </mat-form-field>
+  </div>
+  <mat-grid-list cols="1" rowHeight="40px" class="grid">
+    <mat-grid-tile>
+      <b>
+        If you could change something in schools what would it be?
+      </b>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let el of educationTable; let i = index"
+    (click)="rowSelected(i)"
+    [ngStyle]="{'background-color':  (i === highLightedRow) ? 'black': 'rgb(99, 96, 96)'}">
+      {{el}}
+    </mat-grid-tile>
+  </mat-grid-list>
+</form>

@@ -1,0 +1,10 @@
+.contents-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2%;
+}
+
+mat-label {
+  font-size: 12px;
+}

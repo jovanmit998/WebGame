@@ -1,0 +1,40 @@
+mat-form-field {
+  width: 30%;
+  color: white;
+}
+
+mat-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+mat-datepicker-toggle {
+  font-size: 25px;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+button {
+  display: block;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.regButtons {
+  display: inline-flex;
+  column-gap: 20px;
+}
+
+.uniqueid {
+  width: 100%;
+}

@@ -1,0 +1,19 @@
+<ng-container *ngIf="(state.getHelperText() | async) as helperData">
+  <h1 mat-dialog-title>Personal Helper</h1>
+  <div mat-dialog-content>
+    <img src="assets/ManTalking.gif" alt="Helper">
+  </div>
+  <div mat-dialog-actions>
+    <div class="text-container">
+      <button mat-icon-button (click)="moveLeft(helperData)">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <p>{{helperData[index]}}</p>
+      <button mat-icon-button (click)="moveRight(helperData)">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+    <button mat-button (click)="onClose()" class="close" color="warn">X</button>
+  </div>
+</ng-container>
+

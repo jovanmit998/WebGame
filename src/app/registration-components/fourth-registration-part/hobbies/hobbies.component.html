@@ -1,0 +1,21 @@
+<form [formGroup]="hobbiesForm">
+<div class="contents-container">
+  <mat-form-field appearance="fill">
+    <mat-label>What is one of your hobbies?</mat-label>
+    <input matInput formControlName="favoriteHobby">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill"
+  *ngIf="hobbiesForm.get('favoriteHobby')?.dirty &&
+  hobbiesForm.get('favoriteHobby')?.touched &&
+  hobbiesForm.get('favoriteHobby')?.valid"
+  @fadeAnimation>
+    <mat-label>Why is {{hobbiesForm.get('favoriteHobby').value}} your favorite hobby?</mat-label>
+    <textarea matInput formControlName="favoriteHobbyExplanation"></textarea>
+  </mat-form-field>
+  <ng-container *ngIf="hobbiesForm.get('favoriteHobby')?.valid">
+    <mat-label>How weird would you say that {{hobbiesForm.get('favoriteHobby').value}} is?</mat-label>
+    <mat-slider min="0" max="10" step="1" formControlName="slider"></mat-slider>
+    <mat-label>{{sliderLabel | async}}</mat-label>
+  </ng-container>
+</div>

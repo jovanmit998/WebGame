@@ -1,0 +1,12 @@
+<ng-container *ngIf="(vm$ | async) as vm">
+  <mat-toolbar color="primary">
+    <div class="navigation">
+      <span>My Application</span>
+      <div *ngIf="vm[1]"  class="map-image">
+        <mat-icon id="map"
+        matTooltip="Show me where I am" (click)="openMap()"> map</mat-icon>
+        <img [src]="'assets/' + vm[0] + '.png'" alt="germanFlag">
+      </div>
+    </div>
+  </mat-toolbar>
+</ng-container>
